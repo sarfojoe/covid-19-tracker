@@ -18,7 +18,7 @@ body {
 }
 
 .app__dropdown {
-  background-color: rgba(226, 224, 224, 0.932);
+  background-color: rgba(214, 202, 202, 0.932);
   border-radius: 5px;
 }
 .app__dropdown:hover {
@@ -33,7 +33,7 @@ body {
 }
 
 .app__left {
-  flex: 0.9;
+  flex: 0.94;
 }
 
 .app__right {
@@ -45,6 +45,7 @@ body {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  background-color: rgba(226, 224, 224, 0.932);
 }
 .app__graph {
   flex-grow: 1;

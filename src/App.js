@@ -26,7 +26,7 @@ const App = () => {
   const [mapZoom, setMapZoom] = useState(3);
 
   useEffect(() => {
-    fetch("https://disease.sh/v3/covid-19/all")
+    fetch("https://disease.sh/v3/covid-19/all") // this url fetches data for worldwide
       .then((response) => response.json())
       .then((data) => {
         setCountryInfo(data);
@@ -35,12 +35,12 @@ const App = () => {
 
   useEffect(() => {
     const getCountriesData = async () => {
-      fetch("https://disease.sh/v3/covid-19/countries")
+      fetch("https://disease.sh/v3/covid-19/countries") // this url fetches data for a specified country
         .then((response) => response.json())
         .then((data) => {
           const countries = data.map((country) => ({
-            name: country.country,
-            value: country.countryInfo.iso2,
+            name: country.country, // Ghana, United States
+            value: country.countryInfo.iso2, // UK, USA, GH
           }));
           let sortedData = sortData(data);
           setCountries(countries);
@@ -61,12 +61,13 @@ const App = () => {
       countryCode === "worldwide"
         ? "https://disease.sh/v3/covid-19/all"
         : `https://disease.sh/v3/covid-19/countries/${countryCode}`;
-    await fetch(url)
-      .then((response) => response.json())
+    await fetch(url) // make asynch call
+      .then((response) => response.json()) // get the response and turn it into a json
       .then((data) => {
-        setInputCountry(countryCode);
-        setCountryInfo(data);
-        setMapCenter([data.countryInfo.lat, data.countryInfo.lng]);
+        // the json then becomes the data to work with
+        setInputCountry(countryCode); // update the input field
+        setCountryInfo(data); // store the country info into a variable
+        setMapCenter([data.countryInfo.lat, data.countryInfo.long]);
         setMapZoom(4);
       });
   };

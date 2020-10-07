@@ -6,7 +6,9 @@
 .infoBox:not(:last-child) {
   margin-right: 15px;
 }
-
+.card__content {
+  text-align: center;
+}
 .infoBox__cases {
   color: #cc1034;
   font-weight: 600;
@@ -28,6 +30,6 @@
 .infoBox__total {
   color: #6c757d;
   font-weight: 700 !important;
-  font-size: 0.8rem !important;
+  font-size: 1.2rem !important;
   margin-top: 15px !important;
 }

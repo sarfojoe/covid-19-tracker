@@ -61,7 +61,7 @@ const App = () => {
       countryCode === "worldwide"
         ? "https://disease.sh/v3/covid-19/all"
         : `https://disease.sh/v3/covid-19/countries/${countryCode}`;
-    await fetch(url) // make asynch call
+    fetch(url) // make async call
       .then((response) => response.json()) // get the response and turn it into a json
       .then((data) => {
         // the json then becomes the data to work with

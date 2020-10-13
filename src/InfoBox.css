@@ -8,7 +8,9 @@
 }
 .card__content {
   text-align: center;
+  background-color: #f8dede;
 }
+
 .infoBox__cases {
   color: #cc1034;
   font-weight: 600;

@@ -1,6 +1,6 @@
 .map {
-  height: 500px;
-  background-color: rgba(226, 224, 224, 0.932);
+  height: 600px;
+  background-color: #f8dede;
   padding: 1rem;
   border-radius: 20px;
   margin-top: 16px;
@@ -39,4 +39,5 @@
 
 .info-container {
   width: 150px;
+  background-color: #fdeeee;
 }

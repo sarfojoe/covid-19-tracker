@@ -10,7 +10,7 @@ body {
   /*   display: flex; */
   justify-content: space-evenly;
   padding: 20px;
-  margin: 70px;
+  margin: 20px;
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -41,7 +41,7 @@ body {
 
 .app__right {
   display: flex;
-  /*   flex-direction: column; */
+    flex-direction: column;
 }
 
 .app__right .MuiCardContent-root {

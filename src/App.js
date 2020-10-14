@@ -7,12 +7,12 @@ import {
   Card,
   CardContent,
 } from "@material-ui/core";
-import InfoBox from "./InfoBox";
-import LineGraph from "./LineGraph";
-import Table from "./Table";
+import InfoBox from "./components/infobox/InfoBox";
+import LineGraph from "./components/graph/LineGraph";
+import Table from "./components/table/Table";
 import { sortData, prettyPrintStat } from "./util";
 import numeral from "numeral";
-import Map from "./Map";
+import Map from "./components/map/Map";
 import "leaflet/dist/leaflet.css";
 
 const App = () => {
@@ -78,7 +78,7 @@ const App = () => {
         <div className="app__header">
           <h1>COVID-19 Tracker</h1>
           <FormControl className="app__dropdown">
-            <Select
+            <Select // Loop through the countries and show a dropdown list of the options
               variant="outlined"
               value={country}
               onChange={onCountryChange}

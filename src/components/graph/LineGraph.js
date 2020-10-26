@@ -17,7 +17,7 @@ const options = {
     intersect: false,
     callbacks: {
       label: function (tooltipItem, data) {
-        return numeral(tooltipItem.value).format("+0,0");
+        return numeral(tooltipItem.value).format("+0,0"); //install numeral as a package to help format the numbers
       },
     },
   },
@@ -37,7 +37,6 @@ const options = {
           display: false,
         },
         ticks: {
-          // Include a dollar sign in the ticks
           callback: function (value, index, values) {
             return numeral(value).format("0a");
           },
@@ -54,7 +53,7 @@ const buildChartData = (data, casesType) => {
     if (lastDataPoint) {
       let newDataPoint = {
         x: date,
-        y: data[casesType][date] - lastDataPoint,
+        y: data[casesType][date] - lastDataPoint, //to obtain the current cases, substract the previous case fron the new cases
       };
       chartData.push(newDataPoint);
     }
@@ -68,6 +67,7 @@ function LineGraph({ casesType }) {
 
   useEffect(() => {
     const fetchData = async () => {
+      //fetches data from the last 120 days
       await fetch("https://disease.sh/v3/covid-19/historical/all?lastdays=120")
         .then((response) => {
           return response.json();
@@ -76,7 +76,6 @@ function LineGraph({ casesType }) {
           let chartData = buildChartData(data, casesType);
           setData(chartData);
           console.log(chartData);
-          // buildChart(chartData);
         });
     };
 
@@ -85,7 +84,7 @@ function LineGraph({ casesType }) {
 
   return (
     <div>
-      {data?.length > 0 && (
+      {data?.length > 0 && ( //the ? checks if the data exist, if return as undefined (data.data.length)
         <Line
           data={{
             datasets: [
